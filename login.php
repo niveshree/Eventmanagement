@@ -144,11 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               </div>
             </form>
 
-            <p class="text-center">
-              <b>User: admin@example.com</b><br>
-              <b>password: admin123</span>
-             
-            </p>
+         
           </div>
         </div>
         <!-- /Login -->
