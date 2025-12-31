@@ -1,0 +1,7 @@
+[2025-12-11 03:39:53] ERROR - Get all clients error: Disk full (C:\xampp8\tmp\#sql4280_607_2.MAI); waiting for someone to free some space... (errno: 28 "No space left on device")
+[2025-12-12 16:32:58] ERROR - Update database error: Unknown column 'csrf_token' in 'field list'
+[2025-12-12 16:36:50] ERROR - Update database error: Unknown column 'csrf_token' in 'field list'
+[2025-12-12 16:44:25] ERROR - Update database error: Unknown column 'csrf_token' in 'field list'
+[2025-12-12 16:44:40] ERROR - Update database error: Unknown column 'csrf_token' in 'field list'
+[2025-12-12 16:44:42] ERROR - Update database error: Unknown column 'csrf_token' in 'field list'
+[2025-12-12 16:44:46] ERROR - Update database error: Unknown column 'csrf_token' in 'field list'

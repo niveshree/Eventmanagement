@@ -1,0 +1,196 @@
+:root {
+    --bs-primary: #6610f2; /* Indigo */
+    --bs-primary-rgb: 102, 16, 242;
+    --bs-body-bg: #f5f7fa;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    
+    --primary-gradient: linear-gradient(135deg, var(--bs-primary) 0%, rgb(242 136 150) 100%);
+    --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --warning-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    --info-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+body {
+    background-color: var(--bs-body-bg);
+    overflow-x: hidden; /* Fix horizontal overflow */
+    -webkit-font-smoothing: antialiased; /* Native feel */
+}
+
+/* Sticky Layout */
+#layout-menu {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1040;
+}
+
+.layout-navbar {
+    position: sticky !important;
+    top: 0;
+    z-index: 1030;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8) !important; /* Glass effect */
+}
+
+/* Glassmorphism */
+.glass-card, .card {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 1rem;
+}
+
+.glass-header {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+/* Primary Color Overrides */
+.text-primary { color: var(--bs-primary) !important; }
+.bg-primary { background-color: var(--bs-primary) !important; }
+
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-primary:hover {
+    background-color: #520dc2;
+    border-color: #520dc2;
+}
+
+.btn-outline-primary {
+    color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+/* Refined Mobile Bottom Navigation */
+.mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    z-index: 1050;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.05); /* Softer shadow */
+    padding: 0.75rem 0; /* Slightly larger clickable area */
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-top: 1px solid rgba(0,0,0,0.03);
+    padding-bottom: env(safe-area-inset-bottom, 15px); /* iPhone Home bar support */
+}
+
+.nav-item-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #a0a5b9; /* Improved inactive color */
+    font-size: 0.70rem;
+    font-weight: 500;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    width: 60px;
+}
+
+.nav-item-mobile i {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+    transition: transform 0.2s;
+}
+
+.nav-item-mobile.active {
+    color: var(--bs-primary);
+}
+
+.nav-item-mobile.active i {
+    transform: translateY(-2px);
+}
+
+.nav-fab-container {
+    position: relative;
+    top: -35px; /* Lifted FAB */
+}
+
+.nav-fab {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bs-primary) 0%, #a259ff 100%); /* Gradient FAB */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(102, 16, 242, 0.4);
+    font-size: 1.75rem;
+    border: 5px solid #f5f7fa; /* Thicker border to blend with bg */
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-fab:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 991.98px) {
+    .mobile-bottom-nav {
+        display: flex;
+    }
+    
+    .layout-wrapper {
+        padding-bottom: 90px; /* Increased bottom padding */
+    }
+    
+    /* Hide scrollbar for native feel */
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+}
+
+/* Responsive Calendar Toolbar */
+@media (max-width: 768px) {
+    .fc .fc-toolbar {
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .fc-toolbar-chunk {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* Gradients & Utils */
+.bg-gradient-primary { background: linear-gradient(135deg, var(--bs-primary) 0%, #a259ff 100%) !important; }
+.bg-gradient-success { background: linear-gradient(135deg, #28c76f 0%, #48da89 100%) !important; }
+.card-hover:hover { transform: translateY(-5px); transition: transform 0.3s ease; }
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label { color: var(--bs-primary); }
+
+.form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(102, 16, 242, 0.25);
+}
+
+.cal-icon-wrap {
+    padding: 8px;
+    border-radius: 12px;
+}
+.fs-15x { font-size: 2rem !important; }
